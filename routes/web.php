@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
@@ -36,3 +37,5 @@ Route::get('/contacts', function () {
     ];
     return view('main/contact', ['data'=> $data]);
 });
+
+Route::resource('articles', ArticleController::class );
