@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Laravel</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,13 +26,16 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/about">О нас <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/articles">Статьи<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles">Статьи</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/articles/create">Создать статью</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">Контакты</a>
-                    <!-- </li>
-                    <li class="nav-item dropdown">
+                    </li>
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Dropdown
@@ -43,18 +46,18 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </div>
-                    </li> -->
-                    <!-- <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li> -->
                 </ul>
-                <a href="/auth/signup" class="btn btn-outline-succes my-2 my-sm-0">SignUp</a>
+                <a  href="/auth/signup" class="btn btn-outline-success my-2 my-sm-0">SignUp</a>
             </div>
         </nav>
     </header>
     <main>
-        <p>Hello World</p>
-        <div class="container">
+        <p>Hello, World!</p>
+        <div class="container mt-3">
             @yield('content')
         </div>
     </main>
