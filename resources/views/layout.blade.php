@@ -51,15 +51,17 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li> -->
                 </ul>
-                <a  href="/auth/logout" class="btn btn-outline-success my-2 my-sm-0 mx-3">Logout</a>
-                <a  href="/auth/login" class="btn btn-primary my-2 my-sm-0 mx-3">SignIn</a>
+                @guest
                 <a  href="/auth/signup" class="btn btn-outline-success my-2 my-sm-0">SignUp</a>
-                
+                <a  href="/auth/login" class="btn btn-primary my-2 my-sm-0 mx-3">SignIn</a>
+                @endguest
+                @auth
+                <a  href="/auth/logout" class="btn btn-outline-success my-2 my-sm-0 mx-3">Logout</a>
+                @endauth
             </div>
         </nav>
     </header>
     <main>
-        <p>Hello, World!</p>
         <div class="container mt-3">
             @yield('content')
         </div>

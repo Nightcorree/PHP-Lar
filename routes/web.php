@@ -37,7 +37,15 @@ Route::get('/contacts', function () {
     return view('main.contact', ['data' => $data]);
 });
 
-Route::resource('articles', ArticleController::class);
+Route::resource('articles', ArticleController::class)->middleware('auth:sanctum');
+
+
+Route::controller(CommentController::class)->prefix('/comment')->middleware('auth:sanctum')->group( function() {
+    Route::post('', 'store');
+    Route::get('/{id}/edit', 'edit');
+    Route::post('/{comment}/update', 'update');
+    Route::get('/{id}/delete', 'delete');
+});
 
 Route::post('/comment', [CommentController::class, 'store']);
 Route::get('/comment/{id}/edit', [CommentController::class, 'edit']);
