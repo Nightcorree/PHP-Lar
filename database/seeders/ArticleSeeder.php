@@ -17,9 +17,9 @@ class ArticleSeeder extends Seeder
         foreach ($articles as $article) {
             Article::create([
                 'name' => $article->name,
-                'description' => $article->desc,
+                'desc' => $article->desc,
                 'date' => $article->date,
-                'user_id' =>random_int(1,10),
+                'user_id' => random_int(1, 10),
             ]);
         }
     }

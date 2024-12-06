@@ -1,5 +1,5 @@
 @extends('layout')
 @section('content')
-    <h3>Я типа программист</h3>
-    <p>231-322</p>
+    <h3>Я хочу питтцы</h3>
+    <p>а потом спать</p>
 @endsection

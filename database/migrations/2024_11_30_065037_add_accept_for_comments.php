@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->nullable()->add();
+        Schema::table('comments', function (Blueprint $table) {
+            $table->boolean('accept')->nullable()->add();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -24,5 +23,4 @@ return new class extends Migration
     {
         //
     }
-        
 };

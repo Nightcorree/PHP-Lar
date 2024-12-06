@@ -41,16 +41,14 @@ Route::resource('articles', ArticleController::class)->middleware('auth:sanctum'
 
 
 Route::controller(CommentController::class)->prefix('/comment')->middleware('auth:sanctum')->group( function() {
-    Route::post('', 'store');
-    Route::get('/{id}/edit', 'edit');
-    Route::post('/{comment}/update', 'update');
-    Route::get('/{id}/delete', 'delete');
+    Route::post('', 'store')->name('comment.store');
+    Route::get('/{id}/edit', 'edit')->name('comment.edit');
+    Route::post('/{comment}/update', 'update')->name('comment.update');
+    Route::get('/{id}/delete','delete')->name('comment.delete');
+    Route::get('/index', 'index')->name('comments.index');
+    Route::get('/{comment}/accept', 'accept')->name('comment.accept');
+    Route::get('/{comment}/reject', 'reject')->name('comment.reject');
 });
-
-Route::post('/comment', [CommentController::class, 'store']);
-Route::get('/comment/{id}/edit', [CommentController::class, 'edit']);
-Route::post('/comment/{comment}/update', [CommentController::class, 'update']);
-Route::get('/comment/{id}/delete', [CommentController::class, 'delete']);
 
 Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/auth/authenticate', [AuthController::class, 'authenticate']);

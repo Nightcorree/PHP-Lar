@@ -29,9 +29,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/articles">Статьи</a>
                     </li>
+                    @can('create')
                     <li class="nav-item">
                         <a class="nav-link" href="/articles/create">Создать статью</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comment/index">Комментарии</a>
+                    </li>
+                    @endcan
                     <li class="nav-item">
                         <a class="nav-link" href="/contacts">Контакты</a>
                     </li>
@@ -51,13 +56,14 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li> -->
                 </ul>
-                @guest
-                <a  href="/auth/signup" class="btn btn-outline-success my-2 my-sm-0">SignUp</a>
-                <a  href="/auth/login" class="btn btn-primary my-2 my-sm-0 mx-3">SignIn</a>
-                @endguest
                 @auth
                 <a  href="/auth/logout" class="btn btn-outline-success my-2 my-sm-0 mx-3">Logout</a>
                 @endauth
+                @guest
+                <a  href="/auth/login" class="btn btn-primary my-2 my-sm-0 mx-3">SignIn</a>
+                <a  href="/auth/signup" class="btn btn-outline-success my-2 my-sm-0">SignUp</a>
+                @endguest
+                
             </div>
         </nav>
     </header>
